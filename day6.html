@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 6: Chill & Fly Home | Vietnam Trip</title>
+  <title>Day 6 – Chill & Fly Home | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .day-photo { display: block; margin: 28px auto 0 auto; border-radius: 18px; max-width: 97%; box-shadow: 0 2px 18px #b5d0ff44; }
+    .day-section { background: #fff; border-radius: 15px; padding: 24px 28px 10px 28px; box-shadow: 0 2px 8px #e0e0e050; margin-bottom: 28px; }
+    .section-title { color: #3fc1c9; margin-bottom: 8px; }
+    .fact-box { background: #e0eafc; color: #1d3557; border-radius: 11px; padding: 9px 16px; margin: 9px 0 0 0; font-size: 1em;}
+    @media (max-width: 700px) {.day-section{padding:10px 5vw 2px 5vw;}}
+  </style>
+  <script>
+    function toggleFactDepart() {
+      var f = document.getElementById('depart-fact');
+      f.style.display = (f.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -13,27 +26,25 @@
     <a href="extras.html">Extras</a>
   </nav>
   <header>
-    <h1>Day 6: Chill & Return to Delhi</h1>
-    <p>September 9, 2025</p>
+    <h1>Day 6: Chill & Fly Home</h1>
+    <p>Tue, 9th September 2025</p>
   </header>
   <main>
-    <section>
-      <h2>Morning</h2>
+    <div class="day-section">
+      <h2 class="section-title">Morning & Afternoon</h2>
       <ul>
         <li>Brunch at Maison de Tet Decor or The Note Coffee</li>
-        <li>Walk around Old Quarter (last shopping chance: coffee, local goods)</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Afternoon</h2>
-      <ul>
+        <li>Walk Old Quarter (last shopping: coffee, local goods)</li>
         <li>Pack & checkout</li>
-        <li>Grab to Airport</li>
-        <li>Flight: Hanoi → New Delhi (evening flight, lands by ~10 PM)</li>
+        <li>Grab to Airport, fly home (evening)</li>
       </ul>
-    </section>
-    <img src="placeholder-departure.jpg" alt="Goodbye Vietnam" class="trip-photo">
-    <a href="itinerary.html" class="back-link">← Back to Itinerary</a>
+      <button onclick="toggleFactDepart()" class="collapsible">What should you buy in Vietnam?</button>
+      <div class="fact-box" id="depart-fact" style="display:none;">
+        <b>Fun fact:</b>  
+        Vietnam is famous for its coffee (buy some beans!), silk scarves, conical hats (non la), and hand-painted lanterns from Hoi An.
+      </div>
+    </div>
+    <img src="placeholder-departure.jpg" alt="Vietnam Departure" class="day-photo">
   </main>
   <footer>
     <p>Vietnam Trip 2025</p>
