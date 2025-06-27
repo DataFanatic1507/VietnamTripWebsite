@@ -2,41 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meet the Squad | Vietnam Trip 2025</title>
+  <title>The Squad | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Collapsible friend bios
+      document.querySelectorAll('.collapsible').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('active');
+          var content = btn.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="itinerary.html">Itinerary</a>
-    <a href="friends.html">Friends</a>
+    <a href="friends.html" class="active">Friends</a>
     <a href="extras.html">Extras</a>
   </nav>
   <header>
-    <h1>Meet the Squad</h1>
-    <p>Get to know your fellow legends!</p>
+    <h1>The Vietnam Trip 2025 Squad</h1>
+    <p>Scroll & tap to reveal fun facts about your travel buddies!</p>
   </header>
   <main>
     <div class="friend-cards">
       <div class="friend-card">
-        <img src="Pasricha.jpg" alt="Pasricha">
-        <h3>Rahul Pasricha</h3>
-        <p>The foodie and logistics boss</p>
+        <img src="Pasricha.jpg" alt="Varnika Pasricha">
+        <div class="friend-badge">Chief Explorer</div>
+        <h3>Varnika Pasricha</h3>
+        <div class="friend-fact">“Always ready for adventure & nightlife!”</div>
+        <button class="collapsible">More about Pasricha</button>
+        <div class="content-collapsible">
+          <p>Loves planning, spontaneous detours, and is your best bet for late-night stories! Can out-dance anyone at a club and finds the best Instagram spots.</p>
+        </div>
       </div>
       <div class="friend-card">
-        <img src="Gupta.jpg" alt="Gupta">
+        <img src="Gupta.jpg" alt="Nandini Gupta">
+        <div class="friend-badge">Selfie Queen</div>
         <h3>Nandini Gupta</h3>
-        <p>Queen of selfies and vibes</p>
+        <div class="friend-fact">“Queen of selfies and vibes.”</div>
+        <button class="collapsible">More about Gupta</button>
+        <div class="content-collapsible">
+          <p>Known for legendary selfie angles, finding the cutest cafes, and bringing the party everywhere. Never loses her passport (so far).</p>
+        </div>
       </div>
       <div class="friend-card">
-        <img src="Arora.jpg" alt="Arora">
+        <img src="Arora.jpg" alt="Shivam Arora">
+        <div class="friend-badge">Finance Ninja</div>
         <h3>Shivam Arora</h3>
-        <p>Finance wizard and the planner-in-chief</p>
+        <div class="friend-fact">“The trip's budget boss & food crawl leader!”</div>
+        <button class="collapsible">More about Arora</button>
+        <div class="content-collapsible">
+          <p>Handles bookings, crunches numbers, and leads all food adventures. Always ready for a night market challenge.</p>
+        </div>
       </div>
       <div class="friend-card">
-        <img src="Kaushik.jpg" alt="Kaushik">
-        <h3>Varnika Kaushik</h3>
-        <p>Nightlife explorer, always up for adventure</p>
+        <img src="Kaushik.jpg" alt="Utkarsh Kaushik">
+        <div class="friend-badge">The Negotiator</div>
+        <h3>Utkarsh Kaushik</h3>
+        <div class="friend-fact">“Can haggle with any street vendor in any language.”</div>
+        <button class="collapsible">More about Kaushik</button>
+        <div class="content-collapsible">
+          <p>Master of deals, finder of hidden gems, always up for pool time and spontaneous karaoke.</p>
+        </div>
       </div>
     </div>
   </main>
