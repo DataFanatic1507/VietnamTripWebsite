@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 5: Ha Long Bay | Vietnam Trip</title>
+  <title>Day 5 – Ha Long Bay Cruise | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .day-photo { display: block; margin: 28px auto 0 auto; border-radius: 18px; max-width: 97%; box-shadow: 0 2px 18px #b5d0ff44; }
+    .day-section { background: #fff; border-radius: 15px; padding: 24px 28px 10px 28px; box-shadow: 0 2px 8px #e0e0e050; margin-bottom: 28px; }
+    .section-title { color: #3fc1c9; margin-bottom: 8px; }
+    .fact-box { background: #e0eafc; color: #1d3557; border-radius: 11px; padding: 9px 16px; margin: 9px 0 0 0; font-size: 1em;}
+    @media (max-width: 700px) {.day-section{padding:10px 5vw 2px 5vw;}}
+  </style>
+  <script>
+    function toggleFactHaLong() {
+      var f = document.getElementById('halong-fact');
+      f.style.display = (f.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -13,35 +26,27 @@
     <a href="extras.html">Extras</a>
   </nav>
   <header>
-    <h1>Day 5: Ha Long Bay Full-Day Cruise</h1>
-    <p>September 8, 2025</p>
+    <h1>Day 5: Ha Long Bay Cruise</h1>
+    <p>Mon, 8th September 2025</p>
   </header>
   <main>
-    <section>
-      <h2>Pickup & Drive</h2>
+    <div class="day-section">
+      <h2 class="section-title">Cruise Day</h2>
       <ul>
-        <li>Pickup: 6:30–7:00 AM from hotel</li>
-        <li>Drive: 3.5 hrs to Ha Long Bay</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Cruise Highlights</h2>
-      <ul>
+        <li>6:30–7:00 AM Pickup from hotel</li>
+        <li>Drive to Ha Long Bay (3.5 hrs)</li>
         <li>Kayaking or bamboo boat ride</li>
         <li>Visit Sung Sot Cave, Titop Island</li>
-        <li>Scenic cruising past limestone cliffs</li>
-        <li>Buffet lunch on board (veg options available)</li>
+        <li>Buffet lunch on board</li>
         <li>Return to Hanoi by ~8:30 PM</li>
       </ul>
-    </section>
-    <section>
-      <h2>Dinner</h2>
-      <ul>
-        <li>Light meal or snacks after cruise</li>
-      </ul>
-    </section>
-    <img src="placeholder-halong.jpg" alt="Ha Long Bay" class="trip-photo">
-    <a href="itinerary.html" class="back-link">← Back to Itinerary</a>
+      <button onclick="toggleFactHaLong()" class="collapsible">Why is Ha Long Bay so famous?</button>
+      <div class="fact-box" id="halong-fact" style="display:none;">
+        <b>Fun fact:</b>  
+        Ha Long Bay means "Descending Dragon Bay." According to legend, dragons descended to protect Vietnam from invaders, creating the limestone islands. The bay is a UNESCO World Heritage Site!
+      </div>
+    </div>
+    <img src="placeholder-halong.jpg" alt="Ha Long Bay" class="day-photo">
   </main>
   <footer>
     <p>Vietnam Trip 2025</p>
