@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 1: Da Nang Arrival | Vietnam Trip</title>
+  <title>Day 1 – Da Nang Arrival & Beach | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .day-photo { display: block; margin: 28px auto 0 auto; border-radius: 18px; max-width: 97%; box-shadow: 0 2px 18px #b5d0ff44; }
+    .day-section { background: #fff; border-radius: 15px; padding: 24px 28px 10px 28px; box-shadow: 0 2px 8px #e0e0e050; margin-bottom: 28px; }
+    .section-title { color: #3fc1c9; margin-bottom: 8px; }
+    .fact-box { background: #e0eafc; color: #1d3557; border-radius: 11px; padding: 9px 16px; margin: 9px 0 0 0; font-size: 1em;}
+    @media (max-width: 700px) {.day-section{padding:10px 5vw 2px 5vw;}}
+  </style>
+  <script>
+    function toggleFact() {
+      var f = document.getElementById('danang-fact');
+      f.style.display = (f.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -14,20 +27,20 @@
   </nav>
   <header>
     <h1>Day 1: Da Nang Arrival & Beach</h1>
-    <p>September 4, 2025</p>
+    <p>Thu, 4th September 2025</p>
   </header>
   <main>
-    <section>
-      <h2>Morning</h2>
+    <div class="day-section">
+      <h2 class="section-title">Morning</h2>
       <ul>
-        <li>Flight: Delhi → HCMC → Da Nang (~11 AM arrival)</li>
-        <li>Cab: Grab (~₹1500) to villa near My Khe Beach</li>
+        <li>Arrive in Da Nang (~11 AM)</li>
+        <li>Cab to villa near My Khe Beach</li>
         <li>Chill at the villa</li>
         <li>Light lunch nearby (try Bún Chả Cá or Banh Xeo)</li>
       </ul>
-    </section>
-    <section>
-      <h2>Evening</h2>
+    </div>
+    <div class="day-section">
+      <h2 class="section-title">Evening</h2>
       <ul>
         <li>My Khe Beach: walk, sunset, swim</li>
         <li>Han River + Dragon Bridge</li>
@@ -36,9 +49,13 @@
         <li>Optional: River cruise on Han (~₹500–₹800)</li>
         <li>Dinner: Local seafood or Banh Mi</li>
       </ul>
-    </section>
-    <img src="placeholder-danang.jpg" alt="Da Nang" class="trip-photo">
-    <a href="itinerary.html" class="back-link">← Back to Itinerary</a>
+      <button onclick="toggleFact()" class="collapsible">Why visit My Khe Beach?</button>
+      <div class="fact-box" id="danang-fact" style="display:none;">
+        <b>Did you know?</b>  
+        My Khe Beach is rated as one of the most beautiful beaches on the planet by Forbes. It's known for its white sand and gentle waves—perfect for swimming and sunrise photos!
+      </div>
+    </div>
+    <img src="placeholder-danang.jpg" alt="Da Nang sunset" class="day-photo">
   </main>
   <footer>
     <p>Vietnam Trip 2025</p>
