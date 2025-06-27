@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 3: Ba Na Hills | Vietnam Trip</title>
+  <title>Day 3 – Ba Na Hills | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .day-photo { display: block; margin: 28px auto 0 auto; border-radius: 18px; max-width: 97%; box-shadow: 0 2px 18px #b5d0ff44; }
+    .day-section { background: #fff; border-radius: 15px; padding: 24px 28px 10px 28px; box-shadow: 0 2px 8px #e0e0e050; margin-bottom: 28px; }
+    .section-title { color: #3fc1c9; margin-bottom: 8px; }
+    .fact-box { background: #e0eafc; color: #1d3557; border-radius: 11px; padding: 9px 16px; margin: 9px 0 0 0; font-size: 1em;}
+    @media (max-width: 700px) {.day-section{padding:10px 5vw 2px 5vw;}}
+  </style>
+  <script>
+    function toggleFactBaNa() {
+      var f = document.getElementById('bana-fact');
+      f.style.display = (f.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -14,27 +27,26 @@
   </nav>
   <header>
     <h1>Day 3: Ba Na Hills Adventure</h1>
-    <p>September 6, 2025</p>
+    <p>Sat, 6th September 2025</p>
   </header>
   <main>
-    <section>
-      <h2>Options</h2>
+    <div class="day-section">
+      <h2 class="section-title">Full Day</h2>
       <ul>
-        <li>Curated Tour: Pickup at 7:30 AM, cable car, Golden Bridge, French Village, buffet lunch (~₹3000–₹3500 pp)</li>
-        <li>OR DIY: Cab to Ba Na Hills Station, buy tickets at gate, skip buffet, more flexible</li>
+        <li>7:30 AM Pickup for Ba Na Hills</li>
+        <li>Cable Car (longest in the world!)</li>
+        <li>Golden Bridge (held by giant hands)</li>
+        <li>French Village, Fantasy Park, Wax Museum</li>
+        <li>Buffet lunch (or DIY food adventure)</li>
+        <li>Return to Da Nang by evening</li>
       </ul>
-    </section>
-    <section>
-      <h2>Evening</h2>
-      <ul>
-        <li>Return to Da Nang ~6–7 PM</li>
-        <li>Rest at villa</li>
-        <li>Optional: Dragon Bridge fire show at 9 PM (weekend bonus)</li>
-        <li>Dinner at Fatfish Restaurant or Luna Pub</li>
-      </ul>
-    </section>
-    <img src="placeholder-bana.jpg" alt="Ba Na Hills" class="trip-photo">
-    <a href="itinerary.html" class="back-link">← Back to Itinerary</a>
+      <button onclick="toggleFactBaNa()" class="collapsible">What makes Ba Na Hills unique?</button>
+      <div class="fact-box" id="bana-fact" style="display:none;">
+        <b>Fun fact:</b>  
+        Ba Na Hills features the world’s longest single cable car (5.8km) and the iconic Golden Bridge, which appears to be held up by two giant stone hands! The area is also 1,487 meters above sea level, with cool air year-round.
+      </div>
+    </div>
+    <img src="placeholder-bana.jpg" alt="Ba Na Hills Golden Bridge" class="day-photo">
   </main>
   <footer>
     <p>Vietnam Trip 2025</p>
