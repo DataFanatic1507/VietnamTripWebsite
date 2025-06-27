@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Day 4: Hanoi Arrival | Vietnam Trip</title>
+  <title>Day 4 – Hanoi Arrival | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .day-photo { display: block; margin: 28px auto 0 auto; border-radius: 18px; max-width: 97%; box-shadow: 0 2px 18px #b5d0ff44; }
+    .day-section { background: #fff; border-radius: 15px; padding: 24px 28px 10px 28px; box-shadow: 0 2px 8px #e0e0e050; margin-bottom: 28px; }
+    .section-title { color: #3fc1c9; margin-bottom: 8px; }
+    .fact-box { background: #e0eafc; color: #1d3557; border-radius: 11px; padding: 9px 16px; margin: 9px 0 0 0; font-size: 1em;}
+    @media (max-width: 700px) {.day-section{padding:10px 5vw 2px 5vw;}}
+  </style>
+  <script>
+    function toggleFactHanoi() {
+      var f = document.getElementById('hanoi-fact');
+      f.style.display = (f.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -14,30 +27,32 @@
   </nav>
   <header>
     <h1>Day 4: Hanoi Arrival & Old Quarter</h1>
-    <p>September 7, 2025</p>
+    <p>Sun, 7th September 2025</p>
   </header>
   <main>
-    <section>
-      <h2>Morning/Afternoon</h2>
+    <div class="day-section">
+      <h2 class="section-title">Afternoon</h2>
       <ul>
-        <li>Flight: Da Nang → Hanoi (early morning)</li>
-        <li>Cab: Grab from airport to hotel (~₹1000)</li>
-        <li>Visit Hoan Kiem Lake</li>
-        <li>Ngoc Son Temple</li>
+        <li>Flight to Hanoi (morning)</li>
+        <li>Hoan Kiem Lake, Ngoc Son Temple</li>
         <li>Phung Hung Art Street</li>
-        <li>Coffee: Cafe Giang (Egg Coffee)</li>
+        <li>Egg Coffee at Cafe Giang (Hanoi specialty!)</li>
       </ul>
-    </section>
-    <section>
-      <h2>Evening</h2>
+    </div>
+    <div class="day-section">
+      <h2 class="section-title">Evening</h2>
       <ul>
-        <li>Ta Hien Beer Street (party, beer towers, street eats)</li>
-        <li>Train Street (check train timing)</li>
+        <li>Ta Hien Beer Street: party, beer towers, street eats</li>
+        <li>Train Street (watch the train pass up close!)</li>
         <li>Street food crawl: Bun Cha, Banh Cuon, spring rolls</li>
       </ul>
-    </section>
-    <img src="placeholder-hanoi.jpg" alt="Hanoi" class="trip-photo">
-    <a href="itinerary.html" class="back-link">← Back to Itinerary</a>
+      <button onclick="toggleFactHanoi()" class="collapsible">Why visit Hanoi’s Old Quarter?</button>
+      <div class="fact-box" id="hanoi-fact" style="display:none;">
+        <b>Fun fact:</b>  
+        The Old Quarter is over a millennium old, with winding streets named after the goods they once sold (e.g., Silver Street, Paper Street). Try crossing the street like a local—it’s a rite of passage!
+      </div>
+    </div>
+    <img src="placeholder-hanoi.jpg" alt="Hanoi Old Quarter" class="day-photo">
   </main>
   <footer>
     <p>Vietnam Trip 2025</p>
