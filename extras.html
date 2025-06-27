@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <title>Extras | Vietnam Trip 2025</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function toggleJoke(id) {
+      var box = document.getElementById(id);
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="itinerary.html">Itinerary</a>
     <a href="friends.html">Friends</a>
-    <a href="extras.html">Extras</a>
+    <a href="extras.html" class="active">Extras</a>
   </nav>
   <header>
     <h1>Packing List, Budget & Goofy Squad Stuff</h1>
@@ -56,9 +62,24 @@
     <section>
       <h2>Inside Jokes & Awards Wall</h2>
       <ul>
-        <li>"Mr. Banh Mi 2025" - (Awarded for eating the most banh mi!)</li>
-        <li>"Sunburnt but happy" - (Who forgot sunscreen?)</li>
-        <li>Add your own after the trip!</li>
+        <li>
+          <button class="collapsible" onclick="toggleJoke('joke1')">🏆 “Mr. Banh Mi 2025”</button>
+          <div id="joke1" style="display:none; margin-left:25px;">
+            Awarded for eating the most banh mi. Current champion: Arora.
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleJoke('joke2')">☀️ “Sunburnt but Happy”</button>
+          <div id="joke2" style="display:none; margin-left:25px;">
+            Who forgot sunscreen? Place your bets before the trip!
+          </div>
+        </li>
+        <li>
+          <button class="collapsible" onclick="toggleJoke('joke3')">🎤 “Karaoke King/Queen”</button>
+          <div id="joke3" style="display:none; margin-left:25px;">
+            For the bravest performance on Beer Street.
+          </div>
+        </li>
       </ul>
     </section>
   </main>
