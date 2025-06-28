@@ -132,6 +132,16 @@ h3 { font-size: 1.13rem; margin: 1.6em 0 0.6em 0; }
   margin-bottom: 0.2em;
   margin-top: 0.2em;
 }
+/* PURE WHITE TEXT FOR FRIEND CARDS IN DARK MODE */
+body.dark-mode .card,
+body.dark-mode .card .name,
+body.dark-mode .card .desc {
+  color: #fff !important;
+}
+body.dark-mode .card {
+  background: #19222b !important;
+}
+/* --------------- */
 .cta-btn {
   background: var(--primary);
   color: #fff;
