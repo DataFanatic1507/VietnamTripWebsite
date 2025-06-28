@@ -7,10 +7,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body, nav, .cta-btn { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
-    h1, h2, h3, .card .name { font-family: 'Montserrat', Arial, sans-serif; }
-    .timeline-item { opacity: 0; transform: translateY(40px); transition: opacity 0.7s, transform 0.7s; }
-    .timeline-item.visible { opacity: 1; transform: none; }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      margin: 2em 0;
+      border-left: 4px solid var(--primary);
+      padding-left: 2.2em;
+      gap: 2.2em;
+    }
+    .timeline-item {
+      position: relative;
+      display: flex;
+      gap: 2.1em;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    .timeline-item.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .timeline-date {
+      position: absolute;
+      left: -2.9em;
+      top: 0.5em;
+      width: 2.5em;
+      height: 2.5em;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      box-shadow: 0 2px 10px rgba(20,184,166,0.12);
+    }
+    .timeline-photo {
+      width: 125px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 1em;
+      box-shadow: 0 2px 10px rgba(20,184,166,0.10);
+      background: #e0f2f1;
+      flex-shrink: 0;
+      margin-top: 0.6em;
+    }
+    .timeline-content {
+      background: var(--card);
+      border-radius: 0.7em;
+      box-shadow: 0 1px 6px 0 rgba(20,184,166,.07);
+      padding: 1.1em 1.3em;
+      font-size: 1.07em;
+      min-width: 220px;
+      max-width: 500px;
+      flex: 1;
+    }
+    body.dark-mode .timeline-content { background: #212833; color: #e6f3f2;}
+    @media (max-width: 700px) {
+      .timeline { padding-left: 1.1em; gap: 1.2em; }
+      .timeline-item { flex-direction: column; gap:0.8em;}
+      .timeline-photo { width: 100%; max-width: 98vw; height: 30vw; min-height: 70px; }
+    }
   </style>
 </head>
 <body>
@@ -26,23 +85,59 @@
     <h1>Vietnam 2025 Itinerary</h1>
     <h2>Trip Timeline</h2>
     <div class="timeline" id="timeline">
-      <div class="timeline-item"><div class="timeline-date">Sept 4</div>
-        <div class="timeline-content"><b>Arrive Da Nang</b><br>Check-in, beach, first squad dinner.</div>
+      <!-- Sept 4 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 4</div>
+        <img src="placeholder-danang.jpg" alt="Arrive Da Nang" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Arrive Da Nang</b><br>
+          Check-in, beach, first squad dinner.
+        </div>
       </div>
-      <div class="timeline-item"><div class="timeline-date">Sept 5</div>
-        <div class="timeline-content"><b>Ba Na Hills + Hoi An</b><br>Golden Bridge, cable car, lanterns.</div>
+      <!-- Sept 5 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 5</div>
+        <img src="placeholder-bana.jpg" alt="Ba Na Hills" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Ba Na Hills + Hoi An</b><br>
+          Golden Bridge, cable car, lanterns.
+        </div>
       </div>
-      <div class="timeline-item"><div class="timeline-date">Sept 6</div>
-        <div class="timeline-content"><b>Da Nang chill + Fly to Hanoi</b><br>Explore Old Quarter.</div>
+      <!-- Sept 6 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 6</div>
+        <img src="placeholder-hoian.jpg" alt="Da Nang chill + Fly to Hanoi" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Da Nang chill + Fly to Hanoi</b><br>
+          Explore Old Quarter.
+        </div>
       </div>
-      <div class="timeline-item"><div class="timeline-date">Sept 7</div>
-        <div class="timeline-content"><b>Hanoi & Nightlife</b><br>Beer Street, squad party.</div>
+      <!-- Sept 7 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 7</div>
+        <img src="placeholder-hanoi.jpg" alt="Hanoi & Nightlife" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Hanoi & Nightlife</b><br>
+          Beer Street, squad party.
+        </div>
       </div>
-      <div class="timeline-item"><div class="timeline-date">Sept 8</div>
-        <div class="timeline-content"><b>Ha Long Bay</b><br>Boat, views, chill.</div>
+      <!-- Sept 8 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 8</div>
+        <img src="placeholder-halong.jpg" alt="Ha Long Bay" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Ha Long Bay</b><br>
+          Boat, views, chill.
+        </div>
       </div>
-      <div class="timeline-item"><div class="timeline-date">Sept 9</div>
-        <div class="timeline-content"><b>Return Home</b><br>Brunch & fly back!</div>
+      <!-- Sept 9 -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sept 9</div>
+        <img src="placeholder-departure.jpg" alt="Return Home" class="timeline-photo">
+        <div class="timeline-content">
+          <b>Return Home</b><br>
+          Brunch & fly back!
+        </div>
       </div>
     </div>
   </main>
