@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vietnam Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, nav, .cta-btn { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    h1, h2, h3, .card .name { font-family: 'Montserrat', Arial, sans-serif; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2.2em;
+    }
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 1.2em;
+      box-shadow: 0 6px 24px rgba(20,184,166,0.13);
+      background: #e0f2f1;
+      transition: transform 0.3s, box-shadow 0.23s;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.045) rotate(-1.2deg);
+      box-shadow: 0 14px 34px 0 rgba(20,184,166,0.18);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="friends.html">Friends</a>
+    <a href="documents.html">Documents</a>
+    <a class="active" href="gallery.html">Gallery</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </nav>
+  <main class="main-section">
+    <h1>Squad Gallery</h1>
+    <div class="gallery-grid">
+      <!-- Add your squad trip images here -->
+      <!-- <img src="your-photo-1.jpg" alt="caption"> -->
+    </div>
+    <p style="text-align:center;color:#6b778c;margin-top:2.5em;">More photos coming soon!</p>
+  </main>
+  <footer class="footer">
+    Made with ❤️ by <b>Shivam Arora & Vietnam Squad</b> &mdash; 2025
+  </footer>
+  <script>
+    // Dark mode toggle
+    const themeBtn = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeBtn.textContent = dark ? '🌞' : '🌙';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    themeBtn.onclick = () => setTheme(!document.body.classList.contains('dark-mode'));
+    if (localStorage.getItem('theme') === 'dark') setTheme(true);
+  </script>
+</body>
+</html>
