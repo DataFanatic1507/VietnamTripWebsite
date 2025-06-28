@@ -13,63 +13,46 @@
     <a class="active" href="documents.html">Documents</a>
   </nav>
   <div class="docs-section">
-    <h1>Trip Documents</h1>
-    <form id="uploadForm" enctype="multipart/form-data">
-      <input type="file" id="fileInput" multiple>
-      <button type="submit" class="cta-btn">Upload</button>
-    </form>
-    <h3>Uploaded Files</h3>
+    <h1>Squad Documents</h1>
+    <p>
+      Download any ticket, voucher, or trip doc here.<br>
+      (Latest docs always at the top. More will be added soon!)
+    </p>
     <ul class="docs-list" id="docsList"></ul>
   </div>
   <script>
-    // For frontend-only version (files only available in browser memory)
-    let uploadedFiles = JSON.parse(localStorage.getItem('tripDocs') || '[]');
-    const docsList = document.getElementById('docsList');
-    const uploadForm = document.getElementById('uploadForm');
-    const fileInput = document.getElementById('fileInput');
+    // Replace the 'id' with the actual Google Drive file ID for each document
+    const fileList = [
+      { name: "AirBNB Message - Da Nang.txt", type: "txt", id: "1vixGX1ls9e8c0q6igGtG_Qbk-cSj5xX8" },
+      { name: "Da Nang To Hanoi Flight Tickets.pdf", type: "pdf", id: "1TwNeMbfaB6AWj9RyDPOaISuxCZDIJXcj" },
+      { name: "Da Nang Voucher BNB.pdf", type: "pdf", id: "1PLYk5-oJvO7Jfmf-ug1S9gM0xgrYk2mY" },
+      { name: "Hanoi Hotel Voucher - MoveNPick.pdf", type: "pdf", id: "1qusWkYT6iX_mPM8PlDxSSq3fS-jjqqH3" },
+      { name: "Hanoi to New Delhi Flight Tickets.pdf", type: "pdf", id: "1HYHGBAnwyX_89XLWVC8GlOp2rDiXrYHs" },
+      { name: "New Delhi to Da Nang Flight Tickets.pdf", type: "pdf", id: "1ZI9RpUHwjn9cE-kWL8zmfn29GTUUXzhb" },
+      { name: "Varnika - Hanoi To Mumbai Flight Tickets.pdf", type: "pdf", id: "11L1WkCuKl34839gTiY6UfSJnT3Y7vdhQ" },
+      { name: "Varnika - Mumbai To Da Nang Flight Tickets.pdf", type: "pdf", id: "1czTdpMQnxjY9yOn0WX7nixPK97fQweeM" }
+    ];
 
-    function renderDocs() {
-      docsList.innerHTML = '';
-      if (!uploadedFiles.length) {
-        docsList.innerHTML = '<li>No documents uploaded yet.</li>';
-        return;
-      }
-      uploadedFiles.forEach((file, idx) => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <span>${file.name}</span>
-          <button class="download-btn" onclick="downloadDoc(${idx})">Download</button>
-        `;
-        docsList.appendChild(li);
-      });
+    function getDownloadUrl(fileId) {
+      // Returns a Google Drive direct download link
+      return `https://drive.google.com/uc?export=download&id=${fileId}`;
     }
 
-    uploadForm.onsubmit = function(e) {
-      e.preventDefault();
-      const files = Array.from(fileInput.files);
-      files.forEach(file => {
-        const reader = new FileReader();
-        reader.onload = function(ev) {
-          uploadedFiles.push({ name: file.name, data: ev.target.result });
-          localStorage.setItem('tripDocs', JSON.stringify(uploadedFiles));
-          renderDocs();
-        }
-        reader.readAsDataURL(file);
-      });
-      fileInput.value = '';
-    };
+    function getIcon(type) {
+      if (type === 'pdf') return '📄';
+      if (type === 'txt') return '📝';
+      return '📁';
+    }
 
-    window.downloadDoc = function(idx) {
-      const file = uploadedFiles[idx];
-      const a = document.createElement('a');
-      a.href = file.data;
-      a.download = file.name;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    };
-
-    renderDocs();
+    const docsList = document.getElementById('docsList');
+    fileList.forEach(file => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${getIcon(file.type)} <b>${file.name}</b></span>
+        <a class="download-btn" href="${file.id ? getDownloadUrl(file.id) : '#'}" target="_blank" ${file.id ? '' : 'style="pointer-events:none;opacity:0.5;"'}>Download</a>
+      `;
+      docsList.appendChild(li);
+    });
   </script>
 </body>
 </html>
