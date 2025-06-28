@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vietnam Trip Squad</title>
+  <title>Meet the Squad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body, nav, .cta-btn { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    h1, h2, h3, .card .name { font-family: 'Montserrat', Arial, sans-serif; }
+  </style>
 </head>
 <body>
   <nav>
@@ -11,8 +17,10 @@
     <a href="itinerary.html">Itinerary</a>
     <a class="active" href="friends.html">Friends</a>
     <a href="documents.html">Documents</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
-  <div class="main-section">
+  <main class="main-section">
     <h1>Meet the Squad</h1>
     <div class="cards">
       <!-- Shivam Arora -->
@@ -20,7 +28,8 @@
         <img src="Arora.jpg" alt="Shivam Arora">
         <div class="name">Shivam Arora</div>
         <div class="desc">
-          The planner, the spreadsheet guy, and official “let’s make it epic” captain. Ready to lead the squad to every adventure and photo-op!
+          The planner, spreadsheet guy, and official “let’s make it epic” captain.
+          Ready to lead the squad to every adventure and photo-op!
         </div>
       </div>
       <!-- Nandini Gupta -->
@@ -48,6 +57,69 @@
         </div>
       </div>
     </div>
+  </main>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <img id="modal-img" src="" alt="" style="width:120px;height:120px;border-radius:50%;margin-bottom:1em;">
+      <h2 id="modal-name"></h2>
+      <p id="modal-desc"></p>
+    </div>
   </div>
+  <footer class="footer">
+    Made with ❤️ by <b>Shivam Arora & Vietnam Squad</b> &mdash; 2025
+  </footer>
+  <script>
+    // Modal logic
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalName = document.getElementById('modal-name');
+    const modalDesc = document.getElementById('modal-desc');
+    document.querySelectorAll('.card').forEach(card => {
+      card.onclick = () => {
+        const img = card.querySelector('img');
+        const name = card.querySelector('.name').textContent;
+        const desc = card.querySelector('.desc').textContent;
+        modalImg.src = img.src;
+        modalName.textContent = name;
+        modalDesc.textContent = desc;
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+    });
+    document.getElementById('modal-close').onclick = () => {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    };
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    };
+
+    // Animated card entrance
+    function animateCards() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          card.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCards);
+    window.addEventListener('load', animateCards);
+
+    // Dark mode toggle
+    const themeBtn = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeBtn.textContent = dark ? '🌞' : '🌙';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    themeBtn.onclick = () => setTheme(!document.body.classList.contains('dark-mode'));
+    if (localStorage.getItem('theme') === 'dark') setTheme(true);
+  </script>
 </body>
 </html>
