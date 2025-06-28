@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vietnam Trip Documents</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="friends.html">Friends</a>
+    <a class="active" href="documents.html">Documents</a>
+  </nav>
+  <div class="docs-section">
+    <h1>Trip Documents</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="fileInput" multiple>
+      <button type="submit" class="cta-btn">Upload</button>
+    </form>
+    <h3>Uploaded Files</h3>
+    <ul class="docs-list" id="docsList"></ul>
+  </div>
+  <script>
+    // For frontend-only version (files only available in browser memory)
+    let uploadedFiles = JSON.parse(localStorage.getItem('tripDocs') || '[]');
+    const docsList = document.getElementById('docsList');
+    const uploadForm = document.getElementById('uploadForm');
+    const fileInput = document.getElementById('fileInput');
+
+    function renderDocs() {
+      docsList.innerHTML = '';
+      if (!uploadedFiles.length) {
+        docsList.innerHTML = '<li>No documents uploaded yet.</li>';
+        return;
+      }
+      uploadedFiles.forEach((file, idx) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${file.name}</span>
+          <button class="download-btn" onclick="downloadDoc(${idx})">Download</button>
+        `;
+        docsList.appendChild(li);
+      });
+    }
+
+    uploadForm.onsubmit = function(e) {
+      e.preventDefault();
+      const files = Array.from(fileInput.files);
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          uploadedFiles.push({ name: file.name, data: ev.target.result });
+          localStorage.setItem('tripDocs', JSON.stringify(uploadedFiles));
+          renderDocs();
+        }
+        reader.readAsDataURL(file);
+      });
+      fileInput.value = '';
+    };
+
+    window.downloadDoc = function(idx) {
+      const file = uploadedFiles[idx];
+      const a = document.createElement('a');
+      a.href = file.data;
+      a.download = file.name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    };
+
+    renderDocs();
+  </script>
+</body>
+</html>
