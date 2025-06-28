@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vietnam Trip Documents</title>
+  <title>Trip Documents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body, nav, .cta-btn { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
+    h1, h2, h3, .card .name { font-family: 'Montserrat', Arial, sans-serif; }
+  </style>
 </head>
 <body>
   <nav>
@@ -11,48 +17,43 @@
     <a href="itinerary.html">Itinerary</a>
     <a href="friends.html">Friends</a>
     <a class="active" href="documents.html">Documents</a>
+    <a href="gallery.html">Gallery</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
-  <div class="docs-section">
-    <h1>Squad Documents</h1>
-    <p>
-      Download any ticket, voucher, or trip doc here.<br>
-      (Latest docs always at the top. More will be added soon!)
-    </p>
-    <ul class="docs-list" id="docsList"></ul>
-  </div>
+  <main>
+    <section class="docs-section">
+      <h1>Documents</h1>
+      <ul class="docs-list">
+        <li>
+          <span>Flight Booking.pdf</span>
+          <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1vLw-GVHY..." target="_blank" rel="noopener">Download</a>
+        </li>
+        <li>
+          <span>Vietnam Visa.pdf</span>
+          <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1bYhF28n..." target="_blank" rel="noopener">Download</a>
+        </li>
+        <li>
+          <span>Hotel Voucher.pdf</span>
+          <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1rVsFjB..." target="_blank" rel="noopener">Download</a>
+        </li>
+        <!-- Add more docs here as you upload, just copy-paste this <li> -->
+      </ul>
+      <p style="font-size:0.99em;color:#7b8794;margin-top:1.2em;">Upload new docs to the squad Google Drive and paste new links here.<br>Links above are private to only those who have the link.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    Made with ❤️ by <b>Shivam Arora & Vietnam Squad</b> &mdash; 2025
+  </footer>
   <script>
-    // Replace the 'id' with the actual Google Drive file ID for each document
-    const fileList = [
-      { name: "AirBNB Message - Da Nang.txt", type: "txt", id: "1vixGX1ls9e8c0q6igGtG_Qbk-cSj5xX8" },
-      { name: "Da Nang To Hanoi Flight Tickets.pdf", type: "pdf", id: "1TwNeMbfaB6AWj9RyDPOaISuxCZDIJXcj" },
-      { name: "Da Nang Voucher BNB.pdf", type: "pdf", id: "1PLYk5-oJvO7Jfmf-ug1S9gM0xgrYk2mY" },
-      { name: "Hanoi Hotel Voucher - MoveNPick.pdf", type: "pdf", id: "1qusWkYT6iX_mPM8PlDxSSq3fS-jjqqH3" },
-      { name: "Hanoi to New Delhi Flight Tickets.pdf", type: "pdf", id: "1HYHGBAnwyX_89XLWVC8GlOp2rDiXrYHs" },
-      { name: "New Delhi to Da Nang Flight Tickets.pdf", type: "pdf", id: "1ZI9RpUHwjn9cE-kWL8zmfn29GTUUXzhb" },
-      { name: "Varnika - Hanoi To Mumbai Flight Tickets.pdf", type: "pdf", id: "11L1WkCuKl34839gTiY6UfSJnT3Y7vdhQ" },
-      { name: "Varnika - Mumbai To Da Nang Flight Tickets.pdf", type: "pdf", id: "1czTdpMQnxjY9yOn0WX7nixPK97fQweeM" }
-    ];
-
-    function getDownloadUrl(fileId) {
-      // Returns a Google Drive direct download link
-      return `https://drive.google.com/uc?export=download&id=${fileId}`;
+    // Dark mode toggle
+    const themeBtn = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeBtn.textContent = dark ? '🌞' : '🌙';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
     }
-
-    function getIcon(type) {
-      if (type === 'pdf') return '📄';
-      if (type === 'txt') return '📝';
-      return '📁';
-    }
-
-    const docsList = document.getElementById('docsList');
-    fileList.forEach(file => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <span>${getIcon(file.type)} <b>${file.name}</b></span>
-        <a class="download-btn" href="${file.id ? getDownloadUrl(file.id) : '#'}" target="_blank" ${file.id ? '' : 'style="pointer-events:none;opacity:0.5;"'}>Download</a>
-      `;
-      docsList.appendChild(li);
-    });
+    themeBtn.onclick = () => setTheme(!document.body.classList.contains('dark-mode'));
+    if (localStorage.getItem('theme') === 'dark') setTheme(true);
   </script>
 </body>
 </html>
