@@ -2,78 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Squad | Vietnam Trip 2025</title>
+  <title>Vietnam Trip Squad</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Collapsible friend bios
-      document.querySelectorAll('.collapsible').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          btn.classList.toggle('active');
-          var content = btn.nextElementSibling;
-          content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="itinerary.html">Itinerary</a>
-    <a href="friends.html" class="active">Friends</a>
-    <a href="extras.html">Extras</a>
+    <a class="active" href="friends.html">Friends</a>
+    <a href="documents.html">Documents</a>
   </nav>
-  <header>
-    <h1>The Vietnam Trip 2025 Squad</h1>
-    <p>Scroll & tap to reveal fun facts about your travel buddies!</p>
-  </header>
-  <main>
-    <div class="friend-cards">
-      <div class="friend-card">
-        <img src="Pasricha.jpg" alt="Varnika Pasricha">
-        <div class="friend-badge">Chief Explorer</div>
-        <h3>Varnika Pasricha</h3>
-        <div class="friend-fact">“Always ready for adventure & nightlife!”</div>
-        <button class="collapsible">More about Pasricha</button>
-        <div class="content-collapsible">
-          <p>Loves planning, spontaneous detours, and is your best bet for late-night stories! Can out-dance anyone at a club and finds the best Instagram spots.</p>
-        </div>
-      </div>
-      <div class="friend-card">
-        <img src="Gupta.jpg" alt="Nandini Gupta">
-        <div class="friend-badge">Selfie Queen</div>
-        <h3>Nandini Gupta</h3>
-        <div class="friend-fact">“Queen of selfies and vibes.”</div>
-        <button class="collapsible">More about Gupta</button>
-        <div class="content-collapsible">
-          <p>Known for legendary selfie angles, finding the cutest cafes, and bringing the party everywhere. Never loses her passport (so far).</p>
-        </div>
-      </div>
-      <div class="friend-card">
+  <div class="main-section">
+    <h1>Meet the Squad</h1>
+    <div class="cards">
+      <div class="card" onclick="location.href='Shivam.html'">
         <img src="Arora.jpg" alt="Shivam Arora">
-        <div class="friend-badge">Finance Ninja</div>
-        <h3>Shivam Arora</h3>
-        <div class="friend-fact">“The trip's budget boss & food crawl leader!”</div>
-        <button class="collapsible">More about Arora</button>
-        <div class="content-collapsible">
-          <p>Handles bookings, crunches numbers, and leads all food adventures. Always ready for a night market challenge.</p>
-        </div>
+        <div class="name">Shivam Arora</div>
+        <div class="desc">Squad lead, planner, and official fun police. Always up for trying local food and finding the best photo ops.</div>
       </div>
-      <div class="friend-card">
-        <img src="Kaushik.jpg" alt="Utkarsh Kaushik">
-        <div class="friend-badge">The Negotiator</div>
-        <h3>Utkarsh Kaushik</h3>
-        <div class="friend-fact">“Can haggle with any street vendor in any language.”</div>
-        <button class="collapsible">More about Kaushik</button>
-        <div class="content-collapsible">
-          <p>Master of deals, finder of hidden gems, always up for pool time and spontaneous karaoke.</p>
-        </div>
+      <div class="card" onclick="location.href='Gupta.jpg'">
+        <img src="Gupta.jpg" alt="Aayush Gupta">
+        <div class="name">Aayush Gupta</div>
+        <div class="desc">Resident negotiator and prankster. If something’s going wrong (or right), he’s probably behind it.</div>
+      </div>
+      <div class="card" onclick="location.href='Kaushik.html'">
+        <img src="Kaushik.jpg" alt="Anshuman Kaushik">
+        <div class="name">Anshuman Kaushik</div>
+        <div class="desc">Camera pro, late riser, chief storyteller. Knows every meme and will quote them daily.</div>
+      </div>
+      <div class="card" onclick="location.href='Varnika.html'">
+        <img src="Varnika.jpg" alt="Varnika Pasricha">
+        <div class="name">Varnika Pasricha</div>
+        <div class="desc">Ultimate explorer, selfie queen, and itinerary queen. First to spot Instagrammable spots.</div>
+      </div>
+      <div class="card" onclick="location.href='Nandini.html'">
+        <img src="Pasricha.jpg" alt="Nandini Pasricha">
+        <div class="name">Nandini Pasricha</div>
+        <div class="desc">Energy bomb, foodie, and hype master. Guarantees nobody will ever get bored.</div>
       </div>
     </div>
-  </main>
-  <footer>
-    <p>Vietnam Trip 2025</p>
-  </footer>
+  </div>
 </body>
 </html>
