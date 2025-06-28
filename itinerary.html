@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Timeline styling */
     .timeline {
       margin: 2em 0 4em 0;
       position: relative;
@@ -87,6 +86,43 @@
     .details { display: none; margin: 0.45em 0 0 0; font-weight: 400; color: #333; }
     .expanded .details { display: block; animation: fadein 0.48s;}
     @keyframes fadein { from {opacity:0;} to {opacity:1;} }
+    /* Essentials card styling */
+    .essentials-link-card {
+      margin: 3.2em auto 1.2em auto;
+      max-width: 520px;
+      background: var(--card);
+      border-radius: 1.1em;
+      box-shadow: var(--shadow);
+      padding: 2.2em 1.8em 1.6em 1.8em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .essentials-link-card h3 {
+      margin: 0 0 0.5em 0;
+      font-size: 1.3em;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+    }
+    .essentials-link-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 0.8em;
+      font-size: 1.12em;
+      font-weight: 600;
+      padding: 0.7em 1.5em;
+      margin-top: 1.2em;
+      cursor: pointer;
+      transition: background 0.19s;
+      box-shadow: 0 2px 9px 0 rgba(20,184,166,.13);
+    }
+    .essentials-link-btn:hover {
+      background: var(--accent);
+      color: #111;
+    }
     @media (max-width: 800px) {
       .timeline { padding-left: 0.7em; }
       .timeline-date { left: -48px; width: 48px; font-size:0.99em;}
@@ -102,7 +138,6 @@
     <a href="friends.html">Friends</a>
     <a href="documents.html">Documents</a>
     <a href="gallery.html">Gallery</a>
-    <a href="essentials.html">Essentials</a>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </nav>
   <main class="main-section">
@@ -266,6 +301,14 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- Essentials card (link) -->
+    <div class="essentials-link-card">
+      <h3>Want to see packing, budget & squad tips?</h3>
+      <p style="margin:0.7em 0 0.9em 0; color:#3d5f52;">
+        See the full essentials guide for <b>cost breakdown, checklist, bonus ideas &amp; more</b>!
+      </p>
+      <a href="essentials.html" class="essentials-link-btn" target="_blank" rel="noopener">See Trip Essentials</a>
     </div>
   </main>
   <footer class="footer">
