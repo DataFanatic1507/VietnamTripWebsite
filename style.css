@@ -352,3 +352,38 @@ body.dark-mode .itinerary-card .itinerary-details {
     0 0 15px #ffe06699,
     0 0 3px #fff;
 }
+
+/* ==== GLOWING YELLOW ITINERARY CARDS FOR DARK MODE ==== */
+body.dark-mode .itinerary-card,
+body.dark-mode .itinerary-card * {
+  color: #ffe066 !important;
+  text-shadow:
+    0 0 7px #ffe066cc,
+    0 0 15px #ffe06699,
+    0 0 3px #fff;
+}
+body.dark-mode .itinerary-card a,
+body.dark-mode .itinerary-card strong,
+body.dark-mode .itinerary-card b {
+  color: #fffbe7 !important;
+  text-shadow:
+    0 0 7px #ffe066cc,
+    0 0 15px #ffe06699,
+    0 0 3px #fff;
+  font-weight: 700;
+}
+body.dark-mode .itinerary-card em,
+body.dark-mode .itinerary-card i {
+  color: #ffed99 !important;
+  text-shadow:
+    0 0 6px #ffe066bb;
+}
+body.dark-mode .itinerary-card .secondary,
+body.dark-mode .itinerary-card .subtitle,
+body.dark-mode .itinerary-card .itinerary-meta {
+  color: #fff9c4 !important;
+  text-shadow:
+    0 0 7px #ffe06699,
+    0 0 12px #ffe06677;
+}
+
