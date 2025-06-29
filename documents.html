@@ -6,6 +6,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    .docs-section {
+      max-width: 540px;
+      margin: 2.8rem auto 0 auto;
+      padding: 2.2rem 1.7rem 2.2rem 1.7rem;
+      background: #fff;
+      border-radius: 1.2em;
+      box-shadow: 0 8px 36px 0 rgba(20,184,166,0.11), 0 1.5px 4px rgba(20,184,166,0.04);
+      min-height: 430px;
+      text-align: left;
+    }
+    .docs-section h1 {
+      font-size: 2.1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-top: 0;
+      margin-bottom: 1.35em;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    .docs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.12em;
+    }
+    .docs-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9em 0 0.9em 0.3em;
+      border-bottom: 1px solid #eef1f6;
+      gap: 0.7em;
+      transition: background 0.14s;
+    }
+    .docs-list li:last-child { border-bottom: none; }
+    .docs-list span {
+      flex: 1 1 55%;
+      white-space: normal;
+      font-weight: 500;
+      color: #222c;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .download-btn {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.97em;
+      padding: 0.45em 1.15em;
+      border-radius: 0.7em;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      transition: background 0.13s, color 0.13s;
+      margin-left: 1.2em;
+      box-shadow: 0 1px 4px 0 rgba(20,184,166,.08);
+      letter-spacing: 0.02em;
+      display: inline-block;
+    }
+    .download-btn:hover, .download-btn:focus {
+      background: var(--accent);
+      color: #222;
+    }
+    .docs-section p {
+      font-size: 0.97em;
+      color: #7b8794;
+      margin-top: 2.1em;
+      text-align: center;
+    }
+    @media (max-width: 650px) {
+      .docs-section { padding: 1.3rem 0.3rem 1.5rem 0.3rem; }
+      .docs-list span { font-size: 1em; }
+      .docs-list li { flex-direction: column; align-items: flex-start; gap: 0.5em;}
+      .download-btn { margin-left: 0; }
+    }
+    body.dark-mode .docs-section {
+      background: #19222b;
+      box-shadow: 0 6px 26px 0 rgba(20,184,166,0.09);
+    }
+    body.dark-mode .docs-list li {
+      border-bottom: 1px solid #24343e;
+      background: transparent;
+    }
+    body.dark-mode .docs-list span,
+    body.dark-mode .docs-section h1 {
+      color: #fff !important;
+    }
+    body.dark-mode .docs-section p {
+      color: #a9b8c5;
+    }
+    body.dark-mode .download-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+    body.dark-mode .download-btn:hover,
+    body.dark-mode .download-btn:focus {
+      background: var(--accent);
+      color: #212832;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -53,7 +152,7 @@
           <a class="download-btn" href="https://drive.google.com/uc?export=download&id=1czTdpMQnxjY9yOn0WX7nixPK97fQweeM" target="_blank" rel="noopener">Download</a>
         </li>
       </ul>
-      <p style="font-size:0.99em;color:#7b8794;margin-top:1.2em;">
+      <p>
         Upload new docs to the squad Google Drive and paste new links here.<br>
         Links above are private to only those who have the link.
       </p>
