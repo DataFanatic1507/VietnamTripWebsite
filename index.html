@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Vietnam Squad Trip 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <nav>
@@ -23,26 +23,25 @@
       <div class="hero-content">
         <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar" />
         <div>
-          <h1 style="margin-bottom: 0.2em;">Vietnam Squad Trip <span style="color: var(--primary)">2025</span></h1>
+          <h1 class="hero-title">Vietnam Squad Trip <span class="year">2025</span></h1>
           <div class="hero-lead">
             Hey, I'm <strong>Shivam Arora</strong> — your trip lead!<br>
             Welcome to the official site for our legendary Vietnam squad adventure.<br>
             Explore the itinerary, meet the gang, and access all docs here.
           </div>
-          <!-- Countdown -->
-          <div id="countdown-container" class="countdown-box">
+          <div class="countdown-wrap">
             <span class="countdown-label">Countdown:</span>
-            <span id="countdown"></span>
+            <span id="countdown" class="countdown"></span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Trip Highlights Section -->
-    <section style="margin-top:2em;">
-      <div style="display: flex; flex-wrap: wrap; gap: 2.2em; align-items: center;">
-        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image" style="max-width:320px;width:100%;border-radius:1.2em;box-shadow:0 4px 24px rgba(20,184,166,0.13);background:#e0f2f1;">
-        <div style="flex:1;min-width:240px;">
+    <section class="trip-highlights-section">
+      <div class="trip-highlights-flex">
+        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image">
+        <div class="trip-highlights-content">
           <h2>Trip Highlights</h2>
           <ul class="trip-highlights-list">
             <li>Da Nang beaches & city life</li>
@@ -75,7 +74,6 @@
       if(document.body.classList.contains('dark-mode')) setTheme('light');
       else setTheme('dark');
     }
-    // Auto-detect preference or use saved
     (() => {
       const saved = localStorage.getItem('theme');
       if(saved) setTheme(saved);
@@ -85,24 +83,24 @@
 
   <!-- LIVE COUNTDOWN SCRIPT -->
   <script>
-  // SET YOUR TRIP START DATE/TIME HERE (Vietnam is GMT+7)
-  const tripDate = new Date("2025-09-04T09:00:00+07:00");
-  function updateCountdown() {
-    const now = new Date();
-    const diff = tripDate - now;
-    if (diff <= 0) {
-      document.getElementById("countdown").textContent = "It's Vietnam time! 🎉";
-      return;
+    // Trip Start Date/Time (Vietnam GMT+7)
+    const tripDate = new Date("2025-09-04T09:00:00+07:00");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = tripDate - now;
+      if (diff <= 0) {
+        document.getElementById("countdown").textContent = "It's Vietnam time! 🎉";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById("countdown").textContent =
+        `${days}d ${hrs}h ${mins}m ${secs}s`;
     }
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const mins = Math.floor((diff / (1000 * 60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-    document.getElementById("countdown").textContent =
-      `${days}d ${hrs}h ${mins}m ${secs}s`;
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
