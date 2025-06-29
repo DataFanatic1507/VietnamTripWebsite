@@ -339,3 +339,16 @@ body.dark-mode .countdown-label {
   .hero-content { padding: 1em 0.3em;}
   .main-image { width: 99vw; max-width: 320px;}
 }
+
+/* ==== GLOWING YELLOW ITINERARY CARDS FOR DARK MODE ==== */
+body.dark-mode .itinerary-card,
+body.dark-mode .itinerary-card *,
+body.dark-mode .itinerary-card .itinerary-title,
+body.dark-mode .itinerary-card .itinerary-section-title,
+body.dark-mode .itinerary-card .itinerary-details {
+  color: #ffe066 !important;
+  text-shadow:
+    0 0 7px #ffe066cc,
+    0 0 15px #ffe06699,
+    0 0 3px #fff;
+}
