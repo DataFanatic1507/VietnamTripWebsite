@@ -346,22 +346,20 @@ body.dark-mode .footer {
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 7px; opacity: 0.25;}
 ::-webkit-scrollbar-thumb:hover { background: var(--accent);}
 
-/* --- DARK MODE OVERRIDES FOR HOMEPAGE --- */
-body.dark-mode .hero-content,
-body.dark-mode .hero-content *,
-body.dark-mode .trip-highlights-content,
-body.dark-mode .trip-highlights-content *,
+/* --- DARK MODE OVERRIDES FOR TEXT ON ALL PAGES --- */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
-body.dark-mode .main-section h1,
-body.dark-mode .main-section h2,
-body.dark-mode .main-section h3 {
+body.dark-mode .main-section,
+body.dark-mode .main-section p,
+body.dark-mode .main-section li {
   color: #fff !important;
 }
+
 body.dark-mode .trip-highlights-list {
   color: #fff !important;
 }
+
 body.dark-mode .hero-content {
   background: rgba(22,32,42,0.98);
 }
@@ -374,6 +372,12 @@ body.dark-mode .countdown {
 body.dark-mode .countdown-label {
   background: rgba(251,191,36,0.14);
   color: var(--accent);
+}
+
+/* Exclude card text override (cards already have dark mode styles!) */
+body.dark-mode .card .name,
+body.dark-mode .card .desc {
+  color: #fff !important;
 }
 
 /* RESPONSIVE */
