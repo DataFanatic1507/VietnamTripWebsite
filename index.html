@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Vietnam Squad Trip 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -15,50 +16,44 @@
     <a href="gallery.html">Gallery</a>
     <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙</button>
   </nav>
-
   <main class="main-section">
-    <!-- Hero Section -->
-    <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar" />
-      <h1 class="hero-title">
-        Vietnam Squad Trip <span class="year">2025</span>
-      </h1>
-      <div class="hero-lead">
-        Hey, I'm <strong>Shivam Arora</strong> — your trip lead!<br>
-        Welcome to the official site for our legendary Vietnam squad adventure.<br>
-        Explore the itinerary, meet the gang, and access all docs here.
+    <section class="hero-flex">
+      <div class="hero-content">
+        <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar" />
+        <h1 class="hero-title">
+          Vietnam Squad Trip <span class="year">2025</span>
+        </h1>
+        <div class="hero-lead">
+          Hey, I'm <strong>Shivam Arora</strong> — your trip lead!<br>
+          Welcome to the official site for our legendary Vietnam squad adventure.<br>
+          Explore the itinerary, meet the gang, and access all docs here.
+        </div>
+        <div class="countdown-wrap">
+          <span class="countdown-label">Countdown:</span>
+          <span id="countdown" class="countdown"></span>
+        </div>
       </div>
-      <div class="countdown-wrap">
-        <span class="countdown-label">Countdown:</span>
-        <span id="countdown" class="countdown"></span>
+      <div class="hero-image-section">
+        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image">
       </div>
-    </div>
-  </section>
-
+    </section>
     <!-- Trip Highlights Section -->
     <section class="trip-highlights-section">
-      <div class="trip-highlights-flex">
-        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image">
-        <div class="trip-highlights-content">
-          <h2>Trip Highlights</h2>
-          <ul class="trip-highlights-list">
-            <li>Da Nang beaches & city life</li>
-            <li>Epic Hoi An + Ba Na Hills adventures</li>
-            <li>Hanoi’s Old Quarter, Beer Street</li>
-            <li>Ha Long Bay cruise & squad fun</li>
-          </ul>
-          <a href="itinerary.html" class="cta-btn">See Full Itinerary</a>
-        </div>
+      <div class="trip-highlights-content">
+        <h2>Trip Highlights</h2>
+        <ul class="trip-highlights-list">
+          <li>Da Nang beaches & city life</li>
+          <li>Epic Hoi An + Ba Na Hills adventures</li>
+          <li>Hanoi’s Old Quarter, Beer Street</li>
+          <li>Ha Long Bay cruise & squad fun</li>
+        </ul>
+        <a href="itinerary.html" class="cta-btn">See Full Itinerary</a>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     Made with <span style="color:#fc5276;">♥</span> by <b>Shivam Arora &amp; Vietnam Squad</b> — 2025
   </footer>
-
   <!-- THEME SCRIPT -->
   <script>
     function setTheme(mode) {
@@ -80,10 +75,8 @@
       else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
     })();
   </script>
-
   <!-- LIVE COUNTDOWN SCRIPT -->
   <script>
-    // Trip Start Date/Time (Vietnam GMT+7)
     const tripDate = new Date("2025-09-04T09:00:00+07:00");
     function updateCountdown() {
       const now = new Date();
