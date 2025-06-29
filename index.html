@@ -3,95 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <title>Vietnam Squad Trip 2025</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body, nav, .cta-btn { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; }
-    h1, h2, h3, .card .name { font-family: 'Montserrat', Arial, sans-serif; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <nav>
-    <a class="active" href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="itinerary.html">Itinerary</a>
     <a href="friends.html">Friends</a>
     <a href="documents.html">Documents</a>
     <a href="gallery.html">Gallery</a>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙</button>
   </nav>
+
   <main class="main-section">
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
-        <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar">
+        <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar" />
         <div>
-          <h1>Vietnam Squad Trip <span style="color:var(--primary)">2025</span></h1>
-          <p class="hero-lead">
-            Hey, I’m Shivam Arora – your trip lead!<br>
+          <h1 style="margin-bottom: 0.2em;">Vietnam Squad Trip <span style="color: var(--primary)">2025</span></h1>
+          <div class="hero-lead">
+            Hey, I'm <strong>Shivam Arora</strong> — your trip lead!<br>
             Welcome to the official site for our legendary Vietnam squad adventure.<br>
             Explore the itinerary, meet the gang, and access all docs here.
-          </p>
-          <div class="countdown" id="countdown"></div>
+          </div>
+          <!-- Countdown -->
+          <div id="countdown-container" class="countdown-box">
+            <span class="countdown-label">Countdown:</span>
+            <span id="countdown"></span>
+          </div>
         </div>
       </div>
     </section>
-    <!-- TRIP HIGHLIGHTS -->
-    <div style="display: flex; flex-wrap:wrap; gap:2.7em; align-items:center; justify-content:center;">
-      <img src="placeholder-group.jpg" alt="Vietnam Squad Group"
-        style="width: 410px; max-width: 98vw; aspect-ratio: 1.15/1; object-fit: cover; border-radius: 1.5em; box-shadow: 0 10px 32px rgba(20,184,166,0.19); border: 4px solid #fff; display: block; margin: 0 auto 1.2em auto; transition: transform .23s cubic-bezier(.4,0,.2,1);">
-      <div style="flex:1; min-width:240px;">
-        <h2 style="margin:0 0 0.5em 0;">Trip Highlights</h2>
-        <ul style="font-size:1.14rem; color:#444; line-height:1.75;">
-          <li>Da Nang beaches & city life</li>
-          <li>Epic Hoi An + Ba Na Hills adventures</li>
-          <li>Hanoi’s Old Quarter, Beer Street</li>
-          <li>Ha Long Bay cruise & squad fun</li>
-        </ul>
-        <a class="cta-btn" href="itinerary.html">See Full Itinerary</a>
+
+    <!-- Trip Highlights Section -->
+    <section style="margin-top:2em;">
+      <div style="display: flex; flex-wrap: wrap; gap: 2.2em; align-items: center;">
+        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image" style="max-width:320px;width:100%;border-radius:1.2em;box-shadow:0 4px 24px rgba(20,184,166,0.13);background:#e0f2f1;">
+        <div style="flex:1;min-width:240px;">
+          <h2>Trip Highlights</h2>
+          <ul class="trip-highlights-list">
+            <li>Da Nang beaches & city life</li>
+            <li>Epic Hoi An + Ba Na Hills adventures</li>
+            <li>Hanoi’s Old Quarter, Beer Street</li>
+            <li>Ha Long Bay cruise & squad fun</li>
+          </ul>
+          <a href="itinerary.html" class="cta-btn">See Full Itinerary</a>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
+
   <footer class="footer">
-    Made with ❤️ by <b>Shivam Arora & Vietnam Squad</b> &mdash; 2025 |
-    <a href="https://github.com/DataFanatic1507/VietnamTripWebsite" target="_blank" rel="noopener">GitHub</a>
+    Made with <span style="color:#fc5276;">♥</span> by <b>Shivam Arora &amp; Vietnam Squad</b> — 2025
   </footer>
-  <!-- Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <!-- Countdown -->
+
+  <!-- THEME SCRIPT -->
   <script>
-    const tripDate = new Date("2025-09-04T09:00:00+05:30").getTime();
-    const ctn = document.getElementById('countdown');
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const dist = tripDate - now;
-      if (dist < 0) { ctn.innerHTML = "<b>Let’s go! ✈️</b>"; return; }
-      const d = Math.floor(dist / (1000 * 60 * 60 * 24));
-      const h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-      ctn.innerHTML = `<b>Countdown:</b> ${d} days ${h}h ${m}m to Vietnam!`;
+    function setTheme(mode) {
+      if(mode==='dark') {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme','dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme','light');
+      }
     }
-    setInterval(updateCountdown, 1000); updateCountdown();
-  </script>
-  <!-- Confetti on load -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(() => {
-        confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
-      }, 700);
-    });
-  </script>
-  <!-- Dark mode toggle -->
-  <script>
-    const themeBtn = document.getElementById('theme-toggle');
-    function setTheme(dark) {
-      document.body.classList.toggle('dark-mode', dark);
-      themeBtn.textContent = dark ? '🌞' : '🌙';
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    function toggleTheme() {
+      if(document.body.classList.contains('dark-mode')) setTheme('light');
+      else setTheme('dark');
     }
-    themeBtn.onclick = () => setTheme(!document.body.classList.contains('dark-mode'));
-    if (localStorage.getItem('theme') === 'dark') setTheme(true);
+    // Auto-detect preference or use saved
+    (() => {
+      const saved = localStorage.getItem('theme');
+      if(saved) setTheme(saved);
+      else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    })();
+  </script>
+
+  <!-- LIVE COUNTDOWN SCRIPT -->
+  <script>
+  // SET YOUR TRIP START DATE/TIME HERE (Vietnam is GMT+7)
+  const tripDate = new Date("2025-09-04T09:00:00+07:00");
+  function updateCountdown() {
+    const now = new Date();
+    const diff = tripDate - now;
+    if (diff <= 0) {
+      document.getElementById("countdown").textContent = "It's Vietnam time! 🎉";
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    document.getElementById("countdown").textContent =
+      `${days}d ${hrs}h ${mins}m ${secs}s`;
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
   </script>
 </body>
 </html>
