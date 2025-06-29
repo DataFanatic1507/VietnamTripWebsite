@@ -386,4 +386,16 @@ body.dark-mode .itinerary-card .itinerary-meta {
     0 0 7px #ffe06699,
     0 0 12px #ffe06677;
 }
-
+/* ==== GLOWING YELLOW ITINERARY CARDS FOR DARK MODE - FINAL FIX ==== */
+body.dark-mode .itinerary-card,
+body.dark-mode .itinerary-card *,
+body.dark-mode .itinerary-card li,
+body.dark-mode .itinerary-card span,
+body.dark-mode .itinerary-card strong,
+body.dark-mode .itinerary-card b {
+  color: #ffe066 !important;
+  text-shadow:
+    0 0 7px #ffe066cc,
+    0 0 15px #ffe06699,
+    0 0 3px #fff;
+}
