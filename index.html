@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Vietnam Squad Trip 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,8 +17,12 @@
     <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙</button>
   </nav>
   <main class="main-section">
-    <section class="hero-flex">
-      <div class="hero-content">
+    <!-- Hero Section with image left and content right -->
+    <section class="hero-row">
+      <div class="hero-img-col">
+        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="hero-group-img"/>
+      </div>
+      <div class="hero-content hero-content-col">
         <img src="Arora.jpg" alt="Shivam Arora" class="hero-avatar" />
         <h1 class="hero-title">
           Vietnam Squad Trip <span class="year">2025</span>
@@ -33,10 +37,8 @@
           <span id="countdown" class="countdown"></span>
         </div>
       </div>
-      <div class="hero-image-section">
-        <img src="placeholder-group.jpg" alt="Vietnam Squad Group" class="main-image">
-      </div>
     </section>
+
     <!-- Trip Highlights Section -->
     <section class="trip-highlights-section">
       <div class="trip-highlights-content">
