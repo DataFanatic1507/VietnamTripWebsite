@@ -10,7 +10,7 @@
   --transition-fast: 0.11s cubic-bezier(.4,0,.2,1);
 }
 
-/* PATCH: layout fix for sticky footer and no extra blank space */
+/* Layout for sticky footer */
 html, body {
   min-height: 100vh;
   height: 100%;
@@ -35,8 +35,8 @@ body {
 .footer {
   flex-shrink: 0;
 }
-/* PATCH END */
 
+/* Navigation */
 nav {
   display: flex;
   gap: 2rem;
@@ -89,7 +89,7 @@ nav a.active::after {
 }
 .theme-toggle:focus { outline: 2px solid var(--accent);}
 
-/* PATCH: card/grid fix for Friends page gap issue */
+/* Cards grid (Friends/other pages) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -102,7 +102,6 @@ nav a.active::after {
   min-height: 0;
   box-sizing: border-box;
 }
-/* PATCH END */
 
 h1, h2, h3 {
   font-weight: 800;
@@ -230,7 +229,7 @@ h3 { font-size: 1.13rem; margin: 1.6em 0 0.6em 0; }
   line-height: 1.85em;
 }
 
-/* CARDS (for Friends/Other pages) */
+/* CARD STYLES (Friends, Gallery, etc) */
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -287,17 +286,6 @@ h3 { font-size: 1.13rem; margin: 1.6em 0 0.6em 0; }
   margin-top: 0.2em;
 }
 
-/* PATCH: enforce white text for all dark mode card text & home headings */
-body.dark-mode .card,
-body.dark-mode .card .name,
-body.dark-mode .card .desc {
-  color: #fff !important;
-}
-body.dark-mode .card {
-  background: #19222b !important;
-}
-/* PATCH END */
-
 /* CALL TO ACTION BUTTON */
 .cta-btn {
   background: var(--primary);
@@ -346,23 +334,29 @@ body.dark-mode .footer {
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 7px; opacity: 0.25;}
 ::-webkit-scrollbar-thumb:hover { background: var(--accent);}
 
-/* --- DARK MODE OVERRIDES FOR TEXT ON ALL PAGES --- */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode .main-section,
-body.dark-mode .main-section p,
-body.dark-mode .main-section li {
+/* --- DARK MODE OVERRIDES (corrected, scoped per section) --- */
+
+/* Hero (homepage), highlights, countdown, card (friends), only in dark mode */
+body.dark-mode .hero-content {
+  background: rgba(22,32,42,0.98);
+  color: #fff;
+}
+body.dark-mode .hero-content h1,
+body.dark-mode .hero-content h2,
+body.dark-mode .hero-content h3,
+body.dark-mode .hero-content p,
+body.dark-mode .hero-content .hero-lead {
   color: #fff !important;
 }
-
+body.dark-mode .trip-highlights-content,
+body.dark-mode .trip-highlights-content * {
+  color: #fff !important;
+}
 body.dark-mode .trip-highlights-list {
   color: #fff !important;
 }
 
-body.dark-mode .hero-content {
-  background: rgba(22,32,42,0.98);
-}
+/* COUNTDOWN - pure white text */
 body.dark-mode .countdown {
   background: rgba(20,184,166,0.20);
   color: #fff;
@@ -374,10 +368,14 @@ body.dark-mode .countdown-label {
   color: var(--accent);
 }
 
-/* Exclude card text override (cards already have dark mode styles!) */
+/* FRIENDS CARDS: force card, name, desc to white in dark mode */
+body.dark-mode .card,
 body.dark-mode .card .name,
 body.dark-mode .card .desc {
   color: #fff !important;
+}
+body.dark-mode .card {
+  background: #19222b !important;
 }
 
 /* RESPONSIVE */
